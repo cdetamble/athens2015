@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="curriculum">Select list:</label>
                     <select class="form-control" id="curriculum">
-                        <option ng-repeat="curriculum in grades.curriculum_names">{{curriculum}}</option>
+                        <option ng-repeat="current in grades.curriculum_names">{{current.Curriculum.CURRICULUM_NAME}}</option>
                     </select>
                 </div>
             </div>
