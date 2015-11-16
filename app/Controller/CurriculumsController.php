@@ -30,13 +30,30 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class CurriculumController extends Controller {
+class CurriculumsController extends Controller {
     public $components = array('RequestHandler');
 
     function index() {
         $this->layout = null;
         $curriculums = $this->Curriculum->find('all', array(
             'conditions' => array()
+        ));
+        $this->set('curriculums', $curriculums);
+        $this->set('_serialize', array("curriculums"));
+    }
+
+    function view($type) {
+
+        // must be either "bachelor" or "master"
+        if ($type == "bachelor") {
+            $type = "Bachelor of Science";
+        } else if ($type == "master") {
+            $type = "Master of Science";
+        }
+
+        $this->layout = null;
+        $curriculums = $this->Curriculum->find('all', array(
+            'conditions' => array('DEGREE_NAME' => $type)
         ));
         $this->set('curriculums', $curriculums);
         $this->set('_serialize', array("curriculums"));

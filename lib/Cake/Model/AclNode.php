@@ -17,7 +17,7 @@
 App::uses('Model', 'Model');
 
 /**
- * ACL Node
+ * ACL Nodes
  *
  * @package       Cake.Model
  */
@@ -52,7 +52,7 @@ class AclNode extends Model {
  * Retrieves the Aro/Aco node for this model
  *
  * @param string|array|Model $ref Array with 'model' and 'foreign_key', model object, or string value
- * @return array Node found in database
+ * @return array Nodes found in database
  * @throws CakeException when binding to a model that doesn't exist.
  */
 	public function node($ref = null) {

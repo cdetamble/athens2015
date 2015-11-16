@@ -30,16 +30,20 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class NodeController extends Controller {
+class NodesController extends Controller {
     public $components = array('RequestHandler');
 
     function index() {
         $this->layout = null;
         $nodes = $this->Node->find('all', array(
-            'conditions' => array('Node.CURRICULUM_NR' => 296)
+            'conditions' => array('CURRICULUM_NR' => 296)
         ));
         $this->set('nodes', $nodes);
         $this->set('_serialize', array("nodes"));
+    }
+
+    function view() {
+
     }
 
 }

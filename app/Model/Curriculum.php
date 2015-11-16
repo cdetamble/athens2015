@@ -33,5 +33,6 @@ class Curriculum extends AppModel {
 
     public $primaryKey = "CURRICULUM_NR";
     public $useTable = "VIS_CURRICULUM_VERSION";
+    public $order = array('CURRICULUM_NAME');
 
 }

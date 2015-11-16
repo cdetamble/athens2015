@@ -2738,8 +2738,8 @@ SQL;
 		$expected = array('`Vendor`.`id`', 'COUNT(`Model`.`vendor_id`) AS `Vendor`.`count`');
 		$this->assertEquals($expected, $result);
 
-		$result = $this->Dbo->fields($this->Model, 'Post', "CONCAT(REPEAT(' ', COUNT(Parent.name) - 1), Node.name) AS name, Node.created");
-		$expected = array("CONCAT(REPEAT(' ', COUNT(`Parent`.`name`) - 1), Node.name) AS name", "`Node`.`created`");
+		$result = $this->Dbo->fields($this->Model, 'Post', "CONCAT(REPEAT(' ', COUNT(Parent.name) - 1), Nodes.name) AS name, Nodes.created");
+		$expected = array("CONCAT(REPEAT(' ', COUNT(`Parent`.`name`) - 1), Nodes.name) AS name", "`Nodes`.`created`");
 		$this->assertEquals($expected, $result);
 
 		$result = $this->Dbo->fields($this->Model, null, 'round( (3.55441 * fooField), 3 ) AS test');
@@ -2751,14 +2751,14 @@ SQL;
 		$result = $this->Dbo->fields($this->Model, null, 'ROUND(Rating.rate_total / Rating.rate_count,2) AS rating');
 		$this->assertEquals(array('ROUND(Rating.rate_total / Rating.rate_count,2) AS rating'), $result);
 
-		$result = $this->Dbo->fields($this->Model, 'Post', "Node.created, CONCAT(REPEAT(' ', COUNT(Parent.name) - 1), Node.name) AS name");
-		$expected = array("`Node`.`created`", "CONCAT(REPEAT(' ', COUNT(`Parent`.`name`) - 1), Node.name) AS name");
+		$result = $this->Dbo->fields($this->Model, 'Post', "Nodes.created, CONCAT(REPEAT(' ', COUNT(Parent.name) - 1), Nodes.name) AS name");
+		$expected = array("`Nodes`.`created`", "CONCAT(REPEAT(' ', COUNT(`Parent`.`name`) - 1), Nodes.name) AS name");
 		$this->assertEquals($expected, $result);
 
-		$result = $this->Dbo->fields($this->Model, 'Post', "2.2,COUNT(*), SUM(Something.else) as sum, Node.created, CONCAT(REPEAT(' ', COUNT(Parent.name) - 1), Node.name) AS name,Post.title,Post.1,1.1");
+		$result = $this->Dbo->fields($this->Model, 'Post', "2.2,COUNT(*), SUM(Something.else) as sum, Nodes.created, CONCAT(REPEAT(' ', COUNT(Parent.name) - 1), Nodes.name) AS name,Post.title,Post.1,1.1");
 		$expected = array(
-			'2.2', 'COUNT(*)', 'SUM(`Something`.`else`) as sum', '`Node`.`created`',
-			"CONCAT(REPEAT(' ', COUNT(`Parent`.`name`) - 1), Node.name) AS name", '`Post`.`title`', '`Post`.`1`', '1.1'
+			'2.2', 'COUNT(*)', 'SUM(`Something`.`else`) as sum', '`Nodes`.`created`',
+			"CONCAT(REPEAT(' ', COUNT(`Parent`.`name`) - 1), Nodes.name) AS name", '`Post`.`title`', '`Post`.`1`', '1.1'
 		);
 		$this->assertEquals($expected, $result);
 

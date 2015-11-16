@@ -461,7 +461,7 @@ class AclBehaviorTest extends CakeTestCase {
 	}
 
 /**
- * Test Node()
+ * Test Nodes()
  *
  * @return void
  */

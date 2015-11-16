@@ -1088,7 +1088,7 @@ class ModelWriteTest extends BaseModelTest {
 		));
 		$this->assertEquals($expected, $result);
 
-		$this->loadFixtures('Node', 'Dependency');
+		$this->loadFixtures('Nodes', 'Dependency');
 		$Node = new Node();
 		$Node->set('id', 1);
 		$result = $Node->read();
@@ -2043,17 +2043,17 @@ class ModelWriteTest extends BaseModelTest {
  * @return void
  */
 	public function testSaveHabtmEmptyData() {
-		$this->loadFixtures('Node', 'Dependency');
+		$this->loadFixtures('Nodes', 'Dependency');
 		$Node = new Node();
 
 		$data = array(
-			'Node' => array('name' => 'New First')
+			'Nodes' => array('name' => 'New First')
 		);
 		$Node->id = 1;
 		$Node->save($data);
 
 		$node = $Node->find('first', array(
-			'conditions' => array('Node.id' => 1),
+			'conditions' => array('Nodes.id' => 1),
 			'contain' => array('ParentNode')
 		));
 
@@ -2068,7 +2068,7 @@ class ModelWriteTest extends BaseModelTest {
 		$Node->save($data);
 
 		$node = $Node->find('first', array(
-			'conditions' => array('Node.id' => 1),
+			'conditions' => array('Nodes.id' => 1),
 			'contain' => array('ParentNode')
 		));
 

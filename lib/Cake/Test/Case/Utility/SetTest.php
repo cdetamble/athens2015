@@ -927,7 +927,7 @@ class SetTest extends CakeTestCase {
 		$this->assertEquals($expected, $r);
 
 		$hasMany = array(
-			'Node' => array(
+			'Nodes' => array(
 				'id' => 1,
 				'name' => 'First',
 				'state' => 50

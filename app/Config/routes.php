@@ -33,7 +33,7 @@
 
 // support for rest
 Router::mapResources('nodes');
-Router::mapResources('curriculum');
+Router::mapResources('curriculums');
 Router::parseExtensions();
 
 /**
