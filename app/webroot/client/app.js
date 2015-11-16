@@ -4,27 +4,37 @@
 
 angular.module('Athens', [])
 
-.controller('AppCtrl', function(){
-    this.currentLevel = 0;
-    this.currentUser = '';
-    this.setLevel = function(lvl){
-        this.currentLevel = lvl;
-    };
+    .service('curriculumService', ['$http', function ($http) {
+        this.base_url = "localhost:8080/"
+        this.getByType = function(type){
+            $http.get('index.php/curriculum/view' + type).then(function(response){
+                return response;
+            });
+        };
+    }])
 
-    this.collapse = function(lvl){
-        if (this.currentLevel > lvl){
-            return 'collapsed';
+    .controller('AppCtrl', function () {
+        this.currentLevel = 0;
+        this.currentUser = '';
+        this.setLevel = function (lvl) {
+            this.currentLevel = lvl;
         }
-        else return '';
-    }
 
-    this.setUser = function(user){
-        this.currentUser = user;
-        this.setLevel(1)
-    }
-})
+        this.collapse = function (lvl) {
+            if (this.currentLevel > lvl) {
+                return 'collapsed';
+            }
+            else return '';
+        }
 
-.controller('ModuleGradesCtrl', function(){
-    this.curriculum_names = ['one', 'two', 'three'];
+        this.setUser = function (user) {
+            this.currentUser = user;
+            this.setLevel(1)
+        }
+    })
 
-});
+    .controller('ModuleGradesCtrl', ['curriculumService' ,function (curriculumService) {
+        
+        this.curriculum_names = curriculumService.getByType('master');
+
+    }]);

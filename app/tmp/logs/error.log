@@ -546,3 +546,21 @@ Request URL: /index.php/apple-touch-icon.png
 Stack Trace:
 #0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-11-16 20:31:15 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculum/viewmaster
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:31:16 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculum/viewmaster
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
