@@ -74,7 +74,7 @@ class DATABASE_CONFIG {
 		'password' => 'root',
 		'database' => 'athens',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 
 /*	public $test = array(

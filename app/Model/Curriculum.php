@@ -29,9 +29,9 @@ App::uses('Model', 'Model');
  *
  * @package       app.Model
  */
-class Node extends AppModel {
+class Curriculum extends AppModel {
 
-    public $primaryKey = "NODE_ID";
-    public $useTable = "VIS_MODULE_NODE";
+    public $primaryKey = "CURRICULUM_NR";
+    public $useTable = "VIS_CURRICULUM_VERSION";
 
 }

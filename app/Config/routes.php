@@ -32,6 +32,8 @@
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 // support for rest
+Router::mapResources('nodes');
+Router::mapResources('curriculum');
 Router::parseExtensions();
 
 /**
