@@ -4,20 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/Config/database.php" line="79" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d74e64b-5567-4416-9cf4-51e0f2f581f1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Config/database.php" afterPath="$PROJECT_DIR$/app/Config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Config/routes.php" afterPath="$PROJECT_DIR$/app/Config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/CurriculumController.php" afterPath="$PROJECT_DIR$/app/Controller/CurriculumController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Curriculum.php" afterPath="$PROJECT_DIR$/app/Model/Curriculum.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_athens__v_i_s__m_o_d_u_l_e__n_o_d_e" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_athens__v_i_s__m_o_d_u_l_e__n_o_d_e" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_athens_list" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_athens_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_dev_de-de" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_dev_de-de" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/logs/error.log" afterPath="$PROJECT_DIR$/app/tmp/logs/error.log" />
-    </list>
+    <list default="true" id="9d74e64b-5567-4416-9cf4-51e0f2f581f1" name="Default" comment="" />
     <ignored path="athens2015.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
