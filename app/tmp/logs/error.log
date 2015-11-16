@@ -656,6 +656,7 @@ Request URL: /index.php/client/index.php/curriculum/view/master
 Stack Trace:
 #0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+<<<<<<< HEAD
 2015-11-16 20:42:29 Error: [MissingControllerException] Controller class ClientController could not be found.
 Exception Attributes: array (
   'class' => 'ClientController',
@@ -719,10 +720,34 @@ Stack Trace:
 #12 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
 2015-11-16 20:45:26 Error: [MissingControllerException] Controller class ClientController could not be found.
+=======
+2015-11-16 20:46:22 Error: [MissingControllerException] Controller class ClientsController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientsController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/clients
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:46:25 Error: [MissingControllerException] Controller class ClientsController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientsController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/clients
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:46:25 Error: [MissingControllerException] Controller class ClientController could not be found.
+>>>>>>> c6ca5258f876b7da004639bf58586f726ecca1d8
 Exception Attributes: array (
   'class' => 'ClientController',
   'plugin' => NULL,
 )
+<<<<<<< HEAD
 Request URL: /index.php/client
 Stack Trace:
 #0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
@@ -736,3 +761,389 @@ Request URL: /index.php/client/index.php/curriculums/view/master
 Stack Trace:
 #0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+=======
+Request URL: /athens2015/index.php/client
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:47:07 Error: [MissingControllerException] Controller class NodeController could not be found.
+Exception Attributes: array (
+  'class' => 'NodeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/node
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:47:07 Error: [MissingControllerException] Controller class NodeController could not be found.
+Exception Attributes: array (
+  'class' => 'NodeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/node
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:47:08 Error: [MissingControllerException] Controller class NodeController could not be found.
+Exception Attributes: array (
+  'class' => 'NodeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/node
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:47:13 Error: [MissingControllerException] Controller class NodeController could not be found.
+Exception Attributes: array (
+  'class' => 'NodeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/node
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:48:44 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:49:03 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:49:20 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:49:29 Error: [MissingViewException] View file "Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/index.ctp',
+)
+Request URL: /athens2015/index.php/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#6 {main}
+2015-11-16 20:49:57 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:49:57 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:50:17 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:50:17 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:50:32 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:50:32 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:50:39 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:50:39 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:50:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:50:40 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:50:54 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:50:54 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:52:10 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:52:10 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:52:23 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:52:23 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:52:59 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:52:59 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:53:26 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:53:26 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:54:48 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /athens2015/index.php/app.js
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#4 {main}
+2015-11-16 20:54:48 Error: [MissingActionException] Action Athens2015Controller::app() could not be found.
+Exception Attributes: array (
+  'controller' => 'Athens2015Controller',
+  'action' => 'app',
+)
+Request URL: /athens2015/app/webroot/index.php/athens2015/app/webroot/css/theme.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(Athens2015Controller), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-11-16 20:56:27 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'Index.phpController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/index.php/curriculums/view/master
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:56:30 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'Index.phpController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/index.php/curriculums/view/master
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:56:40 Error: [MissingControllerException] Controller class NodeController could not be found.
+Exception Attributes: array (
+  'class' => 'NodeController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/node
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:57:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'Index.phpController',
+  'plugin' => NULL,
+)
+Request URL: /athens2015/index.php/index.php/curriculums/view/master
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#2 {main}
+2015-11-16 20:57:47 Error: [MissingViewException] View file "Curriculums/view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Curriculums/view.ctp',
+)
+Request URL: /athens2015/index.php/curriculums/view/master
+Stack Trace:
+#0 /Applications/MAMP/htdocs/athens2015/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/athens2015/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /Applications/MAMP/htdocs/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CurriculumsController), Object(CakeRequest))
+#4 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
+#6 {main}
+>>>>>>> c6ca5258f876b7da004639bf58586f726ecca1d8

@@ -5,9 +5,13 @@
 angular.module('Athens', [])
 
     .service('curriculumService', ['$http', function ($http) {
-        this.base_url = "localhost:8080/"
+        this.base_url = "localhost:8888/"
         this.getByType = function(type){
+<<<<<<< HEAD:app/webroot/client/app.js
             $http.get('index.php/curriculums/view/' + type).success(function(response){
+=======
+            $http.get('curriculums/view/' + type + '.json').then(function(response){
+>>>>>>> c6ca5258f876b7da004639bf58586f726ecca1d8:app/webroot/js/app.js
                 return response;
             });
         };

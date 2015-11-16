@@ -5,9 +5,14 @@
     <title>Athens 2015</title>
     <!--SOURCES -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<<<<<<< HEAD:app/webroot/client/index.html
     <script src="app.js"></script>
+=======
+>>>>>>> c6ca5258f876b7da004639bf58586f726ecca1d8:app/View/Users/index.ctp
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="theme.css">
+    <?php echo $this->Html->script('app'); ?>
+    <?php echo $this->Html->css('theme'); ?>
+
 </head>
 <body ng-app="Athens">
 <h1 class="text-center">Welcome</h1>
