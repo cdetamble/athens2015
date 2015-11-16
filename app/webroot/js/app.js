@@ -5,9 +5,9 @@
 angular.module('Athens', [])
 
     .service('curriculumService', ['$http', function ($http) {
-        
+
         this.getByType = function(type){
-            $http.get('curriculums/view/' + type + '.json').then(function(response){
+            $http.get('/curriculums/view/' + type + '.json').then(function(response){
                 return response;
             });
         };
@@ -34,7 +34,8 @@ angular.module('Athens', [])
     })
 
     .controller('ModuleGradesCtrl', ['curriculumService' ,function (curriculumService) {
-        
+
+        this.type = "bachelor";
         this.curriculum_names = curriculumService.getByType('master');
 
     }]);

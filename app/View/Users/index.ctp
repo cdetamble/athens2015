@@ -32,7 +32,7 @@
             <div class="col-sm-6 text-center">
                 <div class="form-group">
                     <label for="type">Select list:</label>
-                    <select class="form-control" id="type">
+                    <select class="form-control" id="type" ng-model="grades.type">
                         <option>Bachelor of Science</option>
                         <option>Master of Science</option>
                     </select>
@@ -45,6 +45,7 @@
                     <select class="form-control" id="curriculum">
                         <option ng-repeat="current in grades.curriculum_names">{{current.Curriculum.CURRICULUM_NAME}}</option>
                     </select>
+                    type:{{grade.type}}
                 </div>
             </div>
         </div>
