@@ -1319,7 +1319,7 @@ class NodeNoAfterFind extends CakeTestModel {
 }
 
 /**
- * Node class
+ * Nodes class
  *
  * @package       Cake.Test.Case.Model
  */
@@ -1330,7 +1330,7 @@ class Node extends CakeTestModel {
  *
  * @var string
  */
-	public $name = 'Node';
+	public $name = 'Nodes';
 
 /**
  * hasAndBelongsToMany property
@@ -1339,7 +1339,7 @@ class Node extends CakeTestModel {
  */
 	public $hasAndBelongsToMany = array(
 		'ParentNode' => array(
-			'className' => 'Node',
+			'className' => 'Nodes',
 			'joinTable' => 'dependency',
 			'with' => 'Dependency',
 			'foreignKey' => 'child_id',

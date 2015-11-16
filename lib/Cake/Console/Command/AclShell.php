@@ -158,11 +158,11 @@ class AclShell extends AppShell {
 
 		if ($this->Acl->{$class}->find('all', array('conditions' => $identifier))) {
 			if (!$this->Acl->{$class}->deleteAll($identifier)) {
-				$this->error(__d('cake_console', 'Node Not Deleted. ') . __d('cake_console', 'There was an error deleting the %s.', $class) . "\n");
+				$this->error(__d('cake_console', 'Nodes Not Deleted. ') . __d('cake_console', 'There was an error deleting the %s.', $class) . "\n");
 			}
 			$this->out(__d('cake_console', '<success>%s deleted.</success>', $class), 2);
 		} else {
-			$this->error(__d('cake_console', 'Node Not Deleted. ') . __d('cake_console', 'There was an error deleting the %s. Node does not exist.', $class) . "\n");
+			$this->error(__d('cake_console', 'Nodes Not Deleted. ') . __d('cake_console', 'There was an error deleting the %s. Nodes does not exist.', $class) . "\n");
 		}
 	}
 
@@ -186,7 +186,7 @@ class AclShell extends AppShell {
 		if (!$this->Acl->{$class}->save($data)) {
 			$this->out(__d('cake_console', 'Error in setting new parent. Please make sure the parent node exists, and is not a descendant of the node specified.'));
 		} else {
-			$this->out(__d('cake_console', 'Node parent set to %s', $this->args[2]) . "\n");
+			$this->out(__d('cake_console', 'Nodes parent set to %s', $this->args[2]) . "\n");
 		}
 	}
 
@@ -204,7 +204,7 @@ class AclShell extends AppShell {
 
 		if (empty($nodes)) {
 			$this->error(
-				__d('cake_console', "Supplied Node '%s' not found", $this->args[1]),
+				__d('cake_console', "Supplied Nodes '%s' not found", $this->args[1]),
 				__d('cake_console', 'No tree returned.')
 			);
 		}
@@ -502,7 +502,7 @@ class AclShell extends AppShell {
 		))->addSubcommand('initdb', array(
 			'help' => __d('cake_console', 'Initialize the DbAcl tables. Uses this command : cake schema create DbAcl')
 		))->epilog(array(
-			'Node and parent arguments can be in one of the following formats:',
+			'Nodes and parent arguments can be in one of the following formats:',
 			'',
 			' - <model>.<id> - The node will be bound to a specific record of the given model.',
 			'',
@@ -600,7 +600,7 @@ class AclShell extends AppShell {
 /**
  * Build data parameters based on node type
  *
- * @param string $type Node type  (ARO/ACO)
+ * @param string $type Nodes type  (ARO/ACO)
  * @return array Variables
  */
 	protected function _dataVars($type = null) {
