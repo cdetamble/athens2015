@@ -492,3 +492,57 @@ Stack Trace:
 #4 /Applications/MAMP/htdocs/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 /Applications/MAMP/htdocs/athens2015/index.php(41): require('/Applications/M...')
 #6 {main}
+2015-11-16 20:02:34 Error: [MissingControllerException] Controller class Apple-touch-icon-precomposedController could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposedController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:02:34 Error: [MissingControllerException] Controller class Docs-assetsController could not be found.
+Exception Attributes: array (
+  'class' => 'Docs-assetsController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/docs-assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:02:34 Error: [MissingControllerException] Controller class Apple-touch-iconController could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-iconController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/apple-touch-icon.png
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:02:35 Error: [MissingControllerException] Controller class Apple-touch-icon-precomposedController could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposedController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:02:35 Error: [MissingControllerException] Controller class Docs-assetsController could not be found.
+Exception Attributes: array (
+  'class' => 'Docs-assetsController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/docs-assets/ico/favicon.png
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:02:35 Error: [MissingControllerException] Controller class Apple-touch-iconController could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-iconController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/apple-touch-icon.png
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
