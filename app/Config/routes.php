@@ -29,11 +29,6 @@
 
 Router::connect('/', array('controller' => 'users', 'action' => 'index'));
 
-/**
- * ...and connect the rest of 'Pages' controller's URLs.
- */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-
 // support for rest
 Router::mapResources('nodes');
 Router::mapResources('curriculums');
