@@ -5,10 +5,10 @@
     <title>Athens 2015</title>
     <!--SOURCES -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
-    <script src="app.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="theme.css">
+    <?php echo $this->Html->script('app'); ?>
+    <?php echo $this->Html->css('theme'); ?>
+
 </head>
 <body ng-app="Athens">
 <h1 class="text-center">Welcome</h1>
