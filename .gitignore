@@ -1,8 +1,8 @@
 # User specific & automatically generated files #
 #################################################
-/app/tmp/*
+app/tmp
+athens2015/app/tmp/*
 /app/tmp/sessions/sess_*
-!/app/tmp/sessions
 /lib/Cake/Console/Templates/skel/tmp/
 /plugins
 /vendors

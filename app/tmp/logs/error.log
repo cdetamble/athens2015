@@ -564,3 +564,95 @@ Request URL: /index.php/client/index.php/curriculum/viewmaster
 Stack Trace:
 #0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-11-16 20:36:47 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculum/viewmaster
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:37:16 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculum/viewmaster
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:38:04 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/viewmaster
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:38:30 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:38:46 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:38:51 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:39:18 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:39:27 Error: [MissingControllerException] Controller class CurriculumsController could not be found.
+Exception Attributes: array (
+  'class' => 'CurriculumsController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:39:42 Error: [MissingActionException] Action CurriculumController::view() could not be found.
+Exception Attributes: array (
+  'controller' => 'CurriculumController',
+  'action' => 'view',
+)
+Request URL: /index.php/curriculum/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CurriculumController), Object(CakeRequest))
+#2 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-11-16 20:39:49 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculum/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
