@@ -656,3 +656,83 @@ Request URL: /index.php/client/index.php/curriculum/view/master
 Stack Trace:
 #0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-11-16 20:42:29 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculum/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:42:33 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:42:37 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'athens\'',
+  'enabled' => true,
+)
+Request URL: /index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3626): ConnectionManager::getDataSource('default')
+#3 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3653): Model->setSource('VIS_CURRICULUM_...')
+#5 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3031): Model->getDataSource()
+#6 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3003): Model->_readDataSource('all', Array)
+#7 /Users/Rodrigo/Developer/athens2015/athens2015/app/Controller/CurriculumsController.php(57): Model->find('all', Array)
+#8 [internal function]: CurriculumsController->view('master')
+#9 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CurriculumsController), Array)
+#10 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CurriculumsController), Object(CakeRequest))
+#12 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-11-16 20:42:42 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'athens\'',
+  'enabled' => true,
+)
+Request URL: /index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3626): ConnectionManager::getDataSource('default')
+#3 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(1155): Model->setDataSource('default')
+#4 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3653): Model->setSource('VIS_CURRICULUM_...')
+#5 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3031): Model->getDataSource()
+#6 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Model/Model.php(3003): Model->_readDataSource('all', Array)
+#7 /Users/Rodrigo/Developer/athens2015/athens2015/app/Controller/CurriculumsController.php(57): Model->find('all', Array)
+#8 [internal function]: CurriculumsController->view('master')
+#9 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CurriculumsController), Array)
+#10 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 /Users/Rodrigo/Developer/athens2015/athens2015/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(CurriculumsController), Object(CakeRequest))
+#12 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2015-11-16 20:45:26 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-11-16 20:45:36 Error: [MissingControllerException] Controller class ClientController could not be found.
+Exception Attributes: array (
+  'class' => 'ClientController',
+  'plugin' => NULL,
+)
+Request URL: /index.php/client/index.php/curriculums/view/master
+Stack Trace:
+#0 /Users/Rodrigo/Developer/athens2015/athens2015/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

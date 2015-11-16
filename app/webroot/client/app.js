@@ -7,7 +7,7 @@ angular.module('Athens', [])
     .service('curriculumService', ['$http', function ($http) {
         this.base_url = "localhost:8080/"
         this.getByType = function(type){
-            $http.get('index.php/curriculums/view/' + type).then(function(response){
+            $http.get('index.php/curriculums/view/' + type).success(function(response){
                 return response;
             });
         };
