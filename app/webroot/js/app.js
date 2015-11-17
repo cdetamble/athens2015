@@ -4,17 +4,16 @@
 
 angular.module('Athens', [])
 
-    .service('curriculumService', ['$http', function ($http) {
+    .service('APIService', ['$http', function ($http) {
 
-<<<<<<< HEAD
-        this.getByType = function (type) {
+
+        this.getCurriculumsByType = function (type) {
             return $http.get('curriculums/view/' + type + '.json')
-=======
-        this.getByType = function(type){
-            $http.get('curriculums/view/' + type + '.json').then(function(response){
-                return response;
-            });
->>>>>>> origin/master
+        };
+
+        this.getModulesByNumber = function (number) {
+
+            return $http.get()
         };
     }])
 
@@ -38,19 +37,29 @@ angular.module('Athens', [])
         }
     })
 
-    .controller('ModuleGradesCtrl', ['curriculumService', function (curriculumService) {
+    .controller('ModuleGradesCtrl', ['APIService', function (APIService) {
         this.curriculumTypes = [{name: 'Bachelor of Science', value: 'bachelor'}, {
             name: 'Master of Science',
             value: 'master'
         }];
-        this.curriculum_names = [];
+        this.curriculums = [];
+        this.modules = [];
+
         this.selectedType = {};
         this.selectedCurriculum = {};
+        this.selectedModule = {};
+
         var that = this;
 
         this.updateCurriculums = function(){
-            curriculumService.getByType(this.selectedType.value).success(function (data) {
-                that.curriculum_names = data.curriculums;
+            APIService.getCurriculumsByType(this.selectedType.value).success(function (data) {
+                that.curriculums = data.curriculums;
+            });
+        };
+
+        this.updateModules = function(){
+            APIService.getModulesByNumber(this.selectedType.value).success(function (data) {
+                that.curriculums = data.curriculums;
             });
         };
 

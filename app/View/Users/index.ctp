@@ -30,7 +30,7 @@
     <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'lecturer' ? true : false" ng-controller="ModuleGradesCtrl as grades">
         <div class="row">
 
-            <div class="col-sm-6 text-center">
+            <div class="col-sm-4 text-center">
                 <div class="form-group">
                     <label for="type">Type of Curriculum:</label>
                     <select class="form-control" id="type" ng-model="grades.selectedType" ng-options="type.name for type in grades.curriculumTypes" ng-change="grades.updateCurriculums()">
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 text-center">
+            <div class="col-sm-4 text-center">
                 <div class="form-group">
                     <label for="curriculum">Curriculum:</label>
                     <select class="form-control" id="curriculum" ng-model="grades.selectedCurriculum" ng-options="current.Curriculum.CURRICULUM_NAME for current in grades.curriculum_names">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 </body>
