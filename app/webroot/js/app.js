@@ -90,20 +90,21 @@ angular.module('Athens', ['nvd3'])
         this.updateCurriculums = function () {
             APIService.getCurriculumsByType(this.selectedType.value).success(function (data) {
                 that.curriculums = data.curriculums;
+
             });
 
-            this.selectedNode = '';
         };
 
         this.updateNodes = function () {
             APIService.getNodesByNumber(this.selectedCurriculum.Curriculum.CURRICULUM_NR).success(function (data) {
                 that.nodes = data.nodes;
             });
+
+
         };
 
         this.updateNodesPieChart = function () {
             NodesPieChartService.broadcast(this.selectedNode);
-
         };
 
 

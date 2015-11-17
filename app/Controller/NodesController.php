@@ -48,6 +48,9 @@ class NodesController extends Controller {
             'conditions' => $conditions
         ));
 
+        if (empty($nodes))
+            $nodes[] = array("Node" => array("NODE_TITLE" => "None"));
+
         $this->set('nodes', $nodes);
         $this->set('_serialize', array("nodes"));
     }
