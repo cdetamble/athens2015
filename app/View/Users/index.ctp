@@ -34,30 +34,28 @@
         </div>
     </div>
 
-    <div class="jumbotron" ng-class="app.collapse(1)" ng-controller="ModuleGradesCtrl as grades" ng-show="app.currentUser == 'lecturer' ? true : false">
+
+    <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'lecturer' ? true : false" ng-controller="ModuleGradesCtrl as grades">
         <div class="row">
 
             <div class="col-sm-6 text-center">
                 <div class="form-group">
-                    <label for="type">Select list:</label>
-                    <select class="form-control" id="type" ng-model="grades.type">
-                        <option>Bachelor of Science</option>
-                        <option>Master of Science</option>
+                    <label for="type">Type of Curriculum:</label>
+                    <select class="form-control" id="type" ng-model="grades.selectedType" ng-options="type.name for type in grades.curriculumTypes" ng-change="grades.updateCurriculums()">
                     </select>
                 </div>
             </div>
 
             <div class="col-sm-6 text-center">
                 <div class="form-group">
-                    <label for="curriculum">Select list:</label>
-                    <select class="form-control" id="curriculum">
-                        <option ng-repeat="current in grades.curriculum_names">{{current.Curriculum.CURRICULUM_NAME}}</option>
+                    <label for="curriculum">Curriculum:</label>
+                    <select class="form-control" id="curriculum" ng-model="grades.selectedCurriculum" ng-options="current.Curriculum.CURRICULUM_NAME for current in grades.curriculum_names">
                     </select>
-                    type:{{grade.type}}
                 </div>
             </div>
         </div>
     </div>
+    
 </div>
 </body>
 
