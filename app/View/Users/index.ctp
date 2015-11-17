@@ -6,8 +6,10 @@
 
     <!--SOURCES -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.9/d3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <?php echo $this->Html->script('app'); ?>
+    <?php echo $this->Html->script('angular-nvd3.min'); ?>
     <?php echo $this->Html->css('theme'); ?>
 
     <!-- JavaScript Constants -->
