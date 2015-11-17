@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Athens 2015</title>
+
     <!--SOURCES -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->css('theme'); ?>
+
+    <!-- JavaScript Constants -->
+    <script>
+        var Constants = {
+            BASE_URL: "<?php echo "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI']; ?>"
+        };
+    </script>
 
 </head>
 <body ng-app="Athens">
@@ -51,7 +59,6 @@
         </div>
     </div>
 </div>
-
 </body>
 
 </html>

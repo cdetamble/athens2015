@@ -33,17 +33,22 @@ App::uses('Controller', 'Controller');
 class NodesController extends Controller {
     public $components = array('RequestHandler');
 
+    /**
+     * GET /nodes/.json?curriculum_number=<number>
+     */
     function index() {
         $this->layout = null;
+        $conditions = array();
+
+        if (isset($_GET['curriculum_number']))
+            $conditions['CURRICULUM_NR'] = $_GET['curriculum_number'];
+
         $nodes = $this->Node->find('all', array(
-            'conditions' => array('CURRICULUM_NR' => 296)
+            'conditions' => $conditions
         ));
+
         $this->set('nodes', $nodes);
         $this->set('_serialize', array("nodes"));
-    }
-
-    function view() {
-
     }
 
 }

@@ -30,29 +30,20 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class CurriculumsController extends Controller {
+class GradesController extends Controller {
     public $components = array('RequestHandler');
 
     /**
      * GET /curriculums/.json?type=<bachelor|master>
      */
     function index() {
-        $type = isset($_GET['type']) ? $_GET['type'] : "";
+        $nodeId = isset($_GET['node_id']) ? $_GET['node_id'] : "";
 
-        // must be either "bachelor" or "master"
-        if ($type == "bachelor") {
-            $type = "Bachelor of Science";
-        } else if ($type == "master") {
-            $type = "Master of Science";
-        }
-
-        $this->layout = null;
-        $curriculums = $this->Curriculum->find('all', array(
-            'conditions' => array('DEGREE_NAME' => $type),
-            'group' => array('Curriculum.CURRICULUM_VERSION')
+        $grades = $this->Grade->find('all', array(
+            'conditions' => array('NODE_ID' => $nodeId)
         ));
-        $this->set('curriculums', $curriculums);
-        $this->set('_serialize', array("curriculums"));
+        $this->set('grades', $grades);
+        $this->set('_serialize', array("grades"));
     }
 
 }

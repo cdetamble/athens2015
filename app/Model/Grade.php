@@ -29,10 +29,9 @@ App::uses('Model', 'Model');
  *
  * @package       app.Model
  */
-class Node extends AppModel {
+class Grade extends AppModel {
 
     public $primaryKey = "NODE_ID";
-    public $useTable = "VIS_MODULE_NODE";
-    public $order = "NODE_TITLE";
+    public $useTable = "VIS_GRADES";
 
 }

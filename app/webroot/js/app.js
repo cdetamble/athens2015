@@ -7,7 +7,7 @@ angular.module('Athens', [])
     .service('curriculumService', ['$http', function ($http) {
 
         this.getByType = function(type){
-            $http.get('curriculums/view/' + type + '.json').then(function(response){
+            $http.get(Constants.BASE_URL + '/curriculums/view/' + type + '.json').then(function(response){
                 return response;
             });
         };

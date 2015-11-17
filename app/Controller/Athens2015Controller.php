@@ -34,6 +34,7 @@ class Athens2015Controller extends Controller {
     public $uses = array('Nodes');
 
     function index() {
+        $this->layout = null;
         $this->redirect(array('controller' => "users", 'action' => "index"));
     }
 
