@@ -49,7 +49,7 @@ class CurriculumsController extends Controller {
         $this->layout = null;
         $curriculums = $this->Curriculum->find('all', array(
             'conditions' => array('DEGREE_NAME' => $type),
-            'group' => array('Curriculum.CURRICULUM_VERSION')
+            'group' => array('CURRICULUM_NAME')
         ));
         $this->set('curriculums', $curriculums);
         $this->set('_serialize', array("curriculums"));
