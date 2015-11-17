@@ -56,6 +56,8 @@ angular.module('Athens', [])
             APIService.getCurriculumsByType(this.selectedType.value).success(function (data) {
                 that.curriculums = data.curriculums;
             });
+
+            this.selectedNode = '';
         };
 
         this.updateNodes = function(){
