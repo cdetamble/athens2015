@@ -74,7 +74,7 @@
         <div class="row">
 
             <div class="col-sm-12 text-center">
-                <nvd3 options="moduleGraph.options" data="moduleGraph.data"></nvd3>
+                <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
             </div>
         </div>
 

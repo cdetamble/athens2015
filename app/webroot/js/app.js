@@ -109,7 +109,7 @@ angular.module('Athens', ['nvd3'])
 
     }])
 
-    .controller('ModuleGraphCtrl', ['APIService', 'NodesPieChartService', function (APIService, NodesPieChartService) {
+    .controller('ModuleGraphCtrl', ['APIService', 'NodesPieChartService', '$scope', function (APIService, NodesPieChartService, $scope) {
 
         this.options = {
             chart: {
@@ -139,11 +139,11 @@ angular.module('Athens', ['nvd3'])
 
         this.data = [];
 
-        that = this;
+
 
         NodesPieChartService.listen(function (event, args) {
             APIService.getNodesPieChartById(args.selectedNode.Node.NODE_ID).success(function (data) {
-                that.data = data;
+                $scope.api.updateWithData($scope.data);
                 console.log(data)
             });
         });
