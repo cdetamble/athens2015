@@ -142,9 +142,20 @@ angular.module('Athens', ['nvd3'])
 
 
         NodesPieChartService.listen(function (event, args) {
-            APIService.getNodesPieChartById(args.selectedNode.Node.NODE_ID).success(function (data) {
-                $scope.api.updateWithData($scope.data);
-                console.log(data)
+            APIService.getNodesPieChartById(args.selectedNode.Node.NODE_ID).success(function (response) {
+
+                for (var i = 0; i < response.data.length; i++) {
+                    var item = response.data[i];
+                    if (item['key'] == 0) {
+                        item['key'] = "in time";
+                    } else if (item['key'] < 0) {
+                        item['key'] = (-1 * item['key']) + " semesters before";
+                    } else if (item['key'] > 0) {
+                        item['key'] = item['key'] + " semesters late";
+                    }
+                }
+
+                $scope.api.updateWithData(response.data);
             });
         });
 

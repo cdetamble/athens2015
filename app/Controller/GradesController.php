@@ -46,6 +46,9 @@ class GradesController extends Controller {
         $this->set('_serialize', array("grades"));
     }
 
+    /**
+     * @param $nodeId
+     */
     function pie($nodeId) {
         $grades = $this->Grade->find('all', array(
             'conditions' => array('NODE_ID' => $nodeId)
@@ -72,6 +75,10 @@ class GradesController extends Controller {
         $this->set('_serialize', array("data"));
     }
 
+    /**
+     *
+     * @param $nodeId
+     */
     function bar($nodeId) {
         $grades = $this->Grade->find('all', array(
             'conditions' => array('NODE_ID' => $nodeId)

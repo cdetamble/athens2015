@@ -54,32 +54,35 @@ class NodesController extends Controller {
 
     /**
      * This function returns nodes that students attend who attended in the given node id.
+     * Corresponds to the first task of the assignment.
      * @param $nodeId
      */
     function similarNodes($nodeId) {
+        $nodes = array();
+        $participantNumbers = array();
+
         $participants = $this->ActiveStudents->find('list', array(
             'conditions' => array('NODE_ID' => $nodeId)
         ));
 
-        $participantNumbers = array();
-        foreach ($participants as $participant)
-            $participantNumbers[] = $participant;
+        foreach ($participants as $participant) $participantNumbers[] = $participant;
 
-        $nodes = $this->ActiveStudents->find('list', array(
-            'fields' => array('NODE_ID'),
-            'conditions' => array('ST_PERSON_NR IN' => $participantNumbers)
-        ));
+        if (!empty($participantNumbers)) {
+            $nodes = $this->ActiveStudents->find('list', array(
+                'fields' => array('NODE_ID'),
+                'conditions' => array('ST_PERSON_NR IN' => $participantNumbers)
+            ));
+        }
+        foreach ($nodes as $node) $nodeIds[] = $node;
 
-        foreach ($nodes as $node) {
-            $nodeIds[] = $node;
+        if (!empty($nodeIds)) {
+            $nodes = $this->Node->find('all', array(
+                'conditions' => array('NODE_ID IN' => $nodeIds)
+            ));
         }
 
-        $nodes = $this->Node->find('all', array(
-            'conditions' => array('NODE_ID IN' => $nodeIds)
-        ));
-
-        $this->set('participants', $nodes);
-        $this->set('_serialize', array("participants"));
+        $this->set('similarNodes', $nodes);
+        $this->set('_serialize', array("similarNodes"));
     }
 
 }
