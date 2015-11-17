@@ -7,7 +7,11 @@
     <!--SOURCES -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.9/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
+
+
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->script('angular-nvd3.min'); ?>
     <?php echo $this->Html->css('theme'); ?>
@@ -59,13 +63,22 @@
             <div class="col-sm-4 text-center">
                             <div class="form-group">
                                 <label for="modules">Modules:</label>
-                                <select class="form-control" id="modules" ng-model="grades.selectedNode" ng-options="current.Node.NODE_TITLE for current in grades.nodes">
+                                <select class="form-control" id="modules" ng-model="grades.selectedNode" ng-options="current.Node.NODE_TITLE for current in grades.nodes" ng-change="app.setGraph('moduleGraph'); grades.updateNodesPieChart()">
                                 </select>
                             </div>
             </div>
         </div>
     </div>
 
+    <div class="jumbotron" ng-class="app.collapse(2)" ng-show="app.showGraph() == 'moduleGraph' ? true : false" ng-controller="ModuleGraphCtrl as moduleGraph">
+        <div class="row">
+
+            <div class="col-sm-12 text-center">
+                <nvd3 options="moduleGraph.options" data="moduleGraph.data"></nvd3>
+            </div>
+        </div>
+
+    </div>
 </div>
 </body>
 
