@@ -6,10 +6,8 @@ angular.module('Athens', [])
 
     .service('curriculumService', ['$http', function ($http) {
 
-        this.getByType = function(type){
-            $http.get('/curriculums/view/' + type + '.json').then(function(response){
-                return response;
-            });
+        this.getByType = function (type) {
+            return $http.get('curriculums/view/' + type + '.json')
         };
     }])
 
@@ -33,9 +31,21 @@ angular.module('Athens', [])
         }
     })
 
-    .controller('ModuleGradesCtrl', ['curriculumService' ,function (curriculumService) {
+    .controller('ModuleGradesCtrl', ['curriculumService', function (curriculumService) {
+        this.curriculumTypes = [{name: 'Bachelor of Science', value: 'bachelor'}, {
+            name: 'Master of Science',
+            value: 'master'
+        }];
+        this.curriculum_names = [];
+        this.selectedType = {};
+        this.selectedCurriculum = {};
+        var that = this;
 
-        this.type = "bachelor";
-        this.curriculum_names = curriculumService.getByType('master');
+        this.updateCurriculums = function(){
+            curriculumService.getByType(this.selectedType.value).success(function (data) {
+                that.curriculum_names = data.curriculums;
+            });
+        };
+
 
     }]);
