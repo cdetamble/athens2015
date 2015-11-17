@@ -6,8 +6,15 @@ angular.module('Athens', [])
 
     .service('curriculumService', ['$http', function ($http) {
 
+<<<<<<< HEAD
         this.getByType = function (type) {
             return $http.get('curriculums/view/' + type + '.json')
+=======
+        this.getByType = function(type){
+            $http.get('curriculums/view/' + type + '.json').then(function(response){
+                return response;
+            });
+>>>>>>> origin/master
         };
     }])
 
