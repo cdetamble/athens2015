@@ -46,5 +46,65 @@ class GradesController extends Controller {
         $this->set('_serialize', array("grades"));
     }
 
+    function pie($nodeId) {
+        $grades = $this->Grade->find('all', array(
+            'conditions' => array('NODE_ID' => $nodeId)
+        ));
+
+        foreach ($grades as $grade) {
+            $deltaSemester = $grade['Grade']['STUDENT_SEMESTER'] - $grade['Grade']['SEMESTER_TYPE_ID'];
+            if (!isset($pie[$deltaSemester])) {
+                $pie[$deltaSemester] = 1;
+            } else {
+                $pie[$deltaSemester]++;
+            }
+        }
+
+        foreach ($pie as $key => $value) {
+            $item['key'] = $key;
+            $item['y'] = $value;
+            $data[] = $item;
+        }
+
+        $this->set('data', $data);
+        $this->set('_serialize', array("data"));
+    }
+
+    function bar($nodeId) {
+        $grades = $this->Grade->find('all', array(
+            'conditions' => array('NODE_ID' => $nodeId)
+        ));
+
+        // init with zeros
+        for ($i = 0; $i < 5; $i++) {
+            $bars['in_time'][$i] = 0;
+            $bars['not_in_time'][$i] = 0;
+        }
+
+        // count number of classes
+        foreach ($grades as $grade) {
+            $g = $grade['Grade']['STUDENT_GRADE'];
+            $in_time = ($grade['Grade']['SEMESTER_TYPE_ID'] == $grade['Grade']['STUDENT_SEMESTER']) ? "in_time" : "not_in_time";
+
+            if ($g >= 1 && $g < 1.5)
+                $bars[$in_time][0]++;
+
+            else if ($g >= 1.5 && $g < 2.5)
+                $bars[$in_time][1]++;
+
+            else if ($g >= 2.5 && $g < 3.5)
+                $bars[$in_time][2]++;
+
+            else if ($g >= 3.5 && $g < 4.5)
+                $bars[$in_time][3]++;
+
+            else if ($g >= 4.5)
+                $bars[$in_time][4]++;
+        }
+
+        $this->set('bars', $bars);
+        $this->set('_serialize', array("bars"));
+    }
+
 }
 
