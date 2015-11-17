@@ -51,6 +51,7 @@ class GradesController extends Controller {
             'conditions' => array('NODE_ID' => $nodeId)
         ));
 
+        $pie = array();
         foreach ($grades as $grade) {
             $deltaSemester = $grade['Grade']['STUDENT_SEMESTER'] - $grade['Grade']['SEMESTER_TYPE_ID'];
             if (!isset($pie[$deltaSemester])) {
@@ -60,6 +61,7 @@ class GradesController extends Controller {
             }
         }
 
+        $data = array();
         foreach ($pie as $key => $value) {
             $item['key'] = $key;
             $item['y'] = $value;
