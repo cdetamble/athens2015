@@ -14,7 +14,7 @@ angular.module('Athens', [])
 
         this.getNodesByNumber = function (number) {
 
-            return $http.get(Constants.BASE_URL + 'nodes/.json?curriculum_number=' + number)
+            return $http.get(Constants.BASE_URL + '/nodes/.json?curriculum_number=' + number)
         };
     }])
 
