@@ -25,8 +25,12 @@ athens2015/app/tmp/*
 Icon?
 ehthumbs.db
 Thumbs.db
+<<<<<<< HEAD
 .idea/workspace.xml
 
 app/tmp/cache/persistent/myapp_cake_core_file_map
 
 app/tmp/logs/error.log
+=======
+.idea/workspace.xml
+>>>>>>> origin/master

@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Athens 2015</title>
+
     <!--SOURCES -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->css('theme'); ?>
+
+    <!-- JavaScript Constants -->
+    <script>
+        var Constants = {
+            BASE_URL: "<?php echo "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI']; ?>"
+        };
+    </script>
 
 </head>
 <body ng-app="Athens">
@@ -41,15 +49,22 @@
             <div class="col-sm-4 text-center">
                 <div class="form-group">
                     <label for="curriculum">Curriculum:</label>
-                    <select class="form-control" id="curriculum" ng-model="grades.selectedCurriculum" ng-options="current.Curriculum.CURRICULUM_NAME for current in grades.curriculum_names">
+                    <select class="form-control" id="curriculum" ng-model="grades.selectedCurriculum" ng-options="current.Curriculum.CURRICULUM_NAME for current in grades.curriculums" ng-change="grades.updateNodes()">
                     </select>
                 </div>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                            <div class="form-group">
+                                <label for="modules">Modules:</label>
+                                <select class="form-control" id="modules" ng-model="grades.selectedNode" ng-options="current.Node.NODE_TITLE for current in grades.nodes">
+                                </select>
+                            </div>
             </div>
         </div>
     </div>
 
 </div>
-
 </body>
 
 </html>

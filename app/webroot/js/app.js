@@ -4,16 +4,17 @@
 
 angular.module('Athens', [])
 
+
     .service('APIService', ['$http', function ($http) {
 
 
         this.getCurriculumsByType = function (type) {
-            return $http.get('curriculums/view/' + type + '.json')
+            return $http.get(Constants.BASE_URL + '/curriculums/.json?type=' + type)
         };
 
-        this.getModulesByNumber = function (number) {
+        this.getNodesByNumber = function (number) {
 
-            return $http.get()
+            return $http.get(Constants.BASE_URL + 'nodes/.json?curriculum_number=' + number)
         };
     }])
 
@@ -43,11 +44,11 @@ angular.module('Athens', [])
             value: 'master'
         }];
         this.curriculums = [];
-        this.modules = [];
+        this.nodes = [];
 
         this.selectedType = {};
         this.selectedCurriculum = {};
-        this.selectedModule = {};
+        this.selectedNode = {};
 
         var that = this;
 
@@ -57,9 +58,9 @@ angular.module('Athens', [])
             });
         };
 
-        this.updateModules = function(){
-            APIService.getModulesByNumber(this.selectedType.value).success(function (data) {
-                that.curriculums = data.curriculums;
+        this.updateNodes = function(){
+            APIService.getNodesByNumber(this.selectedCurriculum.Curriculum.CURRICULUM_NR).success(function (data) {
+                that.nodes = data.nodes;
             });
         };
 
