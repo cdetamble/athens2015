@@ -38,7 +38,7 @@ class NodesController extends Controller {
      */
     function index() {
         $this->layout = null;
-        $conditions = array();
+        $conditions = array('NODE_TITLE !=' => "");
 
         if (isset($_GET['curriculum_number']))
             $conditions['CURRICULUM_NR'] = $_GET['curriculum_number'];
