@@ -30,7 +30,7 @@
 <div class="container" ng-view ng-controller="AppCtrl as app">
     <div class="jumbotron" ng-class="app.collapse(0)">
         <div class="row">
-            <div class="col-sm-6 text-cendir">
+            <div class="col-sm-6 text-center">
                 <h2><a href ng-click="app.setUser('lecturer')">Lecturer</a></h2>
             </div>
 
@@ -73,9 +73,9 @@
     <div class="jumbotron" ng-class="app.collapse(2)" ng-show="app.showGraph() == 'moduleGraph' ? true : false" ng-controller="ModuleGraphCtrl as moduleGraph">
         <div class="row">
 
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-6 text-center">
                 <p>This pie chart shows the distribution of the students' attendance.</p>
-                <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
+                <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}" ></nvd3>
             </div>
         </div>
 
