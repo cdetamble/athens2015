@@ -76,7 +76,7 @@
             <div class="col-sm-12 text-center">
                 <h2>Students' Attendance Distribution</h2><br><br>
                 <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
-                <p id="pieInfo"></p>
+                <div id="pieInfo"></div>
             </div>
         </div>
 

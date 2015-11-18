@@ -156,11 +156,11 @@ angular.module('Athens', ['nvd3'])
                     } else if (item['key'] > 0) {
                         item['key'] = item['key'] + " semester" + (item['key'] > 1 ? "s" : "") + " late";
                     }
-                    s += item['y'] + " of them did it " + item['key'] + ". ";
+                    s += item['y'] + " of them did it " + item['key'] + "<br>";
                 }
 
-                $('#pieInfo').text("A total of " + sumStudents + " students were supposed to do "
-                    + args.selectedNode.Node.NODE_TITLE + " in the " + recommendedSemester + " semester. " + s);
+                $('#pieInfo').html("A total of <b>" + sumStudents + "</b> students were supposed to do \"<i>"
+                    + args.selectedNode.Node.NODE_TITLE + "</i>\" in the <b>" + recommendedSemester + "</b> semester.<br>" + s);
 
                 $scope.api.updateWithData(response.data);
             });
