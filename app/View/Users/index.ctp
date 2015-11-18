@@ -44,6 +44,7 @@
         </div>
     </div>
 
+    <!-- LECTURER -->
 
     <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'lecturer' ? true : false" ng-controller="ModuleGradesCtrl as grades">
         <div class="row">
@@ -101,7 +102,37 @@
         </div>
 
     </div>
-</div>
+
+
+    <!-- STUDENT -->
+
+    <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'student' ? true : false" ng-controller="ModuleListCtrl as moduleList">
+        <div class="row">
+
+            <div class="col-sm-6 text-center">
+                <div class="form-group">
+                    <label for="type">Type of Curriculum:</label>
+                    <select class="form-control" id="type" ng-model="moduleList.selectedType" ng-options="type.name for type in moduleList.curriculumTypes" ng-change="moduleList.updateCurriculums()">
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-center">
+                <div class="form-group">
+                    <label for="curriculum">Curriculum:</label>
+                    <select class="form-control" id="curriculum" ng-model="moduleList.selectedCurriculum" ng-options="current.Curriculum.CURRICULUM_NAME for current in moduleList.curriculums" ng-change="app.setModuleList(); moduleList.updateNodes();">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="jumbotron" ng-show="app.moduleList" ng-controller="ModuleListCtrl as moduleList">
+    <ul>
+        <li ng-repeat="node in moduleList.nodes.Node">{{$index}}</li>
+    </ul>
+   </div>
+
 </body>
 
 </html>

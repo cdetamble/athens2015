@@ -47,6 +47,7 @@ angular.module('Athens', ['nvd3'])
         this.currentLevel = 0;
         this.currentUser = '';
         this.currentGraph = '';
+        this.moduleList = false;
 
         this.setLevel = function (lvl) {
             this.currentLevel = lvl;
@@ -68,6 +69,10 @@ angular.module('Athens', ['nvd3'])
             this.currentGraph = graph;
             this.setLevel(2);
         };
+
+        this.setModuleList = function() {
+            this.moduleList = true;
+        }
 
         this.showGraph = function () {
             if (this.currentUser == 'lecturer' && this.currentGraph == 'moduleGraph') {
@@ -189,5 +194,35 @@ angular.module('Athens', ['nvd3'])
                 $scope.api.updateWithData(response.data);
             });
         });
+
+    }])
+
+    .controller('ModuleListCtrl', ['APIService', function (APIService) {
+        this.curriculumTypes = [{name: 'Bachelor of Science', value: 'bachelor'}, {
+            name: 'Master of Science',
+            value: 'master'
+        }];
+        this.curriculums = [];
+        this.nodes = [];
+        this.selectedType = {};
+        this.selectedCurriculum = {};
+        var that = this;
+
+        this.updateCurriculums = function () {
+            APIService.getCurriculumsByType(this.selectedType.value).success(function (data) {
+                that.curriculums = data.curriculums;
+
+            });
+
+        };
+
+        this.updateNodes = function () {
+            APIService.getNodesByNumber(this.selectedCurriculum.Curriculum.CURRICULUM_NR).success(function (data) {
+                that.nodes = data.nodes;
+            });
+
+
+        };
+
 
     }]);
