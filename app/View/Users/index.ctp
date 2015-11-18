@@ -43,7 +43,7 @@
     <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'lecturer' ? true : false" ng-controller="ModuleGradesCtrl as grades">
         <div class="row">
 
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="form-group">
                     <label for="type">Type of Curriculum:</label>
                     <select class="form-control" id="type" ng-model="grades.selectedType" ng-options="type.name for type in grades.curriculumTypes" ng-change="grades.updateCurriculums()">
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="form-group">
                     <label for="curriculum">Curriculum:</label>
                     <select class="form-control" id="curriculum" ng-model="grades.selectedCurriculum" ng-options="current.Curriculum.CURRICULUM_NAME for current in grades.curriculums" ng-change="grades.updateNodes()">
@@ -59,13 +59,22 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
                             <div class="form-group">
                                 <label for="modules">Modules:</label>
-                                <select class="form-control" id="modules" ng-model="grades.selectedNode" ng-options="current.Node.NODE_TITLE for current in grades.nodes" ng-change="app.setGraph('moduleGraph'); grades.updateNodesPieChart()">
+                                <select class="form-control" id="modules" ng-model="grades.selectedNode" ng-options="current.Node.NODE_TITLE for current in grades.nodes" ng-change="grades.updateSimilar(); app.setGraph('moduleGraph'); grades.updateNodesPieChart();">
                                 </select>
                             </div>
             </div>
+
+            <div class="col-sm-3 text-center">
+                                        <div class="form-group">
+                                            <label for="similar">Similar Nodes:</label>
+                                            <select class="form-control" id="similar" ng-model="grades.similarNode" ng-options="current.Node.NODE_TITLE for current in grades.similarNodes" ng-change="grades.updateNodesPieChart()">
+                                            </select>
+                                        </div>
+                        </div>
+
         </div>
     </div>
 
@@ -76,7 +85,12 @@
             <div class="col-sm-12 text-center">
                 <h2>Students' Attendance Distribution</h2><br><br>
                 <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
-                <div id="pieInfo"></div>
+
+               A total of <b>{{moduleGraph.explanation[0]}}</b> students were supposed to do <i>{{moduleGraph.explanation[1]}}</i> in the <b>{{moduleGraph.explanation[2]}}</b> semester.
+               <br>
+               <br>
+               <div id="summary"></div>
+
             </div>
 
         </div>

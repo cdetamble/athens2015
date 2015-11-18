@@ -88,10 +88,12 @@ angular.module('Athens', ['nvd3'])
         }];
         this.curriculums = [];
         this.nodes = [];
+        this.similarNodes = [];
 
         this.selectedType = {};
         this.selectedCurriculum = {};
         this.selectedNode = {};
+        this.similarNode = {};
 
         var that = this;
 
@@ -111,15 +113,27 @@ angular.module('Athens', ['nvd3'])
 
         };
 
+        this.updateSimilar = function () {
+            APIService.getSimilarNodesById(this.selectedNode.Node.NODE_TITLE).success(function (data) {
+                that.similarNodes = data.similarNodes;
+            });
+        };
+
         this.updateNodesPieChart = function () {
             NodesPieChartService.broadcast(this.selectedNode);
+        };
+
+        this.updateSimilarNodesPieChart = function () {
+            this.selectedNode = this.similarNode;
+            this.updateSimilar();
+            this.updateNodesPieChart()
         };
 
 
     }])
 
     .controller('ModuleGraphCtrl', ['APIService', 'NodesPieChartService', '$scope', function (APIService, NodesPieChartService, $scope) {
-
+        this.explanation = [];
         this.options = {
             chart: {
                 type: 'pieChart',
@@ -147,7 +161,7 @@ angular.module('Athens', ['nvd3'])
         };
 
         this.data = [];
-
+        that = this;
         NodesPieChartService.listen(function (event, args) {
             APIService.getNodesPieChartById(args.selectedNode.Node.NODE_ID).success(function (response) {
 
@@ -167,8 +181,10 @@ angular.module('Athens', ['nvd3'])
                     s += item['y'] + " of them did it " + item['key'] + "<br>";
                 }
 
-                $('#pieInfo').html("A total of <b>" + sumStudents + "</b> students were supposed to do \"<i>"
-                    + args.selectedNode.Node.NODE_TITLE + "</i>\" in the <b>" + recommendedSemester + "</b> semester.<br>" + s);
+                that.explanation[0] = sumStudents;
+                that.explanation[1] = args.selectedNode.Node.NODE_TITLE;
+                that.explanation[2] = recommendedSemester;
+                document.getElementById('summary').innerHTML = s;
 
                 $scope.api.updateWithData(response.data);
             });
