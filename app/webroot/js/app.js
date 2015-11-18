@@ -114,7 +114,7 @@ angular.module('Athens', ['nvd3'])
         };
 
         this.updateSimilar = function () {
-            APIService.getSimilarNodesById(this.selectedNode.Node.NODE_TITLE).success(function (data) {
+            APIService.getSimilarNodesById(this.selectedNode.Node.NODE_ID).success(function (data) {
                 that.similarNodes = data.similarNodes;
             });
         };
