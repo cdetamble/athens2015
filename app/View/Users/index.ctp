@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
 
-
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->script('angular-nvd3.min'); ?>
     <?php echo $this->Html->css('theme'); ?>
@@ -73,10 +72,13 @@
     <div class="jumbotron" ng-class="app.collapse(2)" ng-show="app.showGraph() == 'moduleGraph' ? true : false" ng-controller="ModuleGraphCtrl as moduleGraph">
         <div class="row">
 
-            <div class="col-sm-6 text-center">
-                <p>This pie chart shows the distribution of the students' attendance.</p>
-                <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}" ></nvd3>
+
+            <div class="col-sm-12 text-center">
+                <h2>Students' Attendance Distribution</h2><br><br>
+                <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
+                <p id="pieInfo"></p>
             </div>
+
         </div>
 
     </div>
