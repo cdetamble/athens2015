@@ -64,9 +64,13 @@ class NodesController extends Controller {
         $nodes = array();
         $participantNumbers = array();
 
-        $participants = $this->ActiveStudents->find('list', array(
+        $activeStuds = $this->ActiveStudents->find('list', array(
             'conditions' => array('NODE_ID' => $nodeId)
         ));
+        $formerStuds = $this->FormerStudents->find('list', array(
+            'conditions' => array('NODE_ID' => $nodeId)
+        ));
+        $participants = array_merge($activeStuds, $formerStuds);
 
         foreach ($participants as $participant) $participantNumbers[] = $participant;
 
@@ -75,12 +79,17 @@ class NodesController extends Controller {
                 'fields' => array('NODE_ID'),
                 'conditions' => array('ST_PERSON_NR' => $participantNumbers)
             ));
+            $nodes2 = $this->FormerStudents->find('list', array(
+                'fields' => array('NODE_ID'),
+                'conditions' => array('ST_PERSON_NR' => $participantNumbers)
+            ));
+            $nodes = array_merge($nodes, $nodes2);
         }
         foreach ($nodes as $node) $nodeIds[] = $node;
 
         if (!empty($nodeIds)) {
             $nodes = $this->Node->find('all', array(
-                'conditions' => array('NODE_ID' => $nodeIds)
+                'conditions' => array('NODE_ID' => $nodeIds, 'NODE_ID !=' => $nodeId)
             ));
         }
 
