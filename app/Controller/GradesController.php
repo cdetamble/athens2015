@@ -72,7 +72,11 @@ class GradesController extends Controller {
         }
 
         $this->set('data', $data);
-        $this->set('_serialize', array("data"));
+        $this->set('semester', $this->Grade->find('first', array(
+            'fields' => array("SEMESTER_TYPE_ID"),
+            'conditions' => array('NODE_ID' => $nodeId)
+        )));
+        $this->set('_serialize', array("data", "semester"));
     }
 
     /**

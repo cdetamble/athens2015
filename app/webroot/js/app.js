@@ -148,11 +148,11 @@ angular.module('Athens', ['nvd3'])
                 for (var i = 0; i < response.data.length; i++) {
                     var item = response.data[i];
                     if (item['key'] == 0) {
-                        item['key'] = "in time";
+                        item['key'] = "on time (" + response.semester.Grade.SEMESTER_TYPE_ID + ". semester)";
                     } else if (item['key'] < 0) {
-                        item['key'] = (-1 * item['key']) + " semesters before";
+                        item['key'] = (-1 * item['key']) + " semester" + (-1 * item['key'] > 1 ? "s" : "") + " before";
                     } else if (item['key'] > 0) {
-                        item['key'] = item['key'] + " semesters late";
+                        item['key'] = item['key'] + " semester" + (item['key'] > 1 ? "s" : "") + " late";
                     }
                 }
 
