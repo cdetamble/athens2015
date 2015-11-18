@@ -140,21 +140,27 @@ angular.module('Athens', ['nvd3'])
 
         this.data = [];
 
-
-
         NodesPieChartService.listen(function (event, args) {
             APIService.getNodesPieChartById(args.selectedNode.Node.NODE_ID).success(function (response) {
 
+                var recommendedSemester = response.semester.Grade.SEMESTER_TYPE_ID;
+                var sumStudents = 0;
+                var s = "";
                 for (var i = 0; i < response.data.length; i++) {
                     var item = response.data[i];
+                    sumStudents += item['y'];
                     if (item['key'] == 0) {
-                        item['key'] = "on time (" + response.semester.Grade.SEMESTER_TYPE_ID + ". semester)";
+                        item['key'] = "on time (" + recommendedSemester + ". semester)";
                     } else if (item['key'] < 0) {
                         item['key'] = (-1 * item['key']) + " semester" + (-1 * item['key'] > 1 ? "s" : "") + " before";
                     } else if (item['key'] > 0) {
                         item['key'] = item['key'] + " semester" + (item['key'] > 1 ? "s" : "") + " late";
                     }
+                    s += item['y'] + " of them did it " + item['key'] + ". ";
                 }
+
+                $('#pieInfo').text("A total of " + sumStudents + " students were supposed to do "
+                    + args.selectedNode.Node.NODE_TITLE + " in the " + recommendedSemester + " semester. " + s);
 
                 $scope.api.updateWithData(response.data);
             });

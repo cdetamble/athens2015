@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
 
-
+    <?php echo $this->Html->script('jquery'); ?>
     <?php echo $this->Html->script('app'); ?>
     <?php echo $this->Html->script('angular-nvd3.min'); ?>
     <?php echo $this->Html->css('theme'); ?>
@@ -74,8 +74,9 @@
         <div class="row">
 
             <div class="col-sm-12 text-center">
-                <p>This pie chart shows the distribution of the students' attendance.</p>
+                <h2>Students' Attendance Distribution</h2><br><br>
                 <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
+                <p id="pieInfo"></p>
             </div>
         </div>
 
