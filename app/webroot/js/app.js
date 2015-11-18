@@ -22,6 +22,14 @@ angular.module('Athens', ['nvd3'])
             return $http.get(Constants.BASE_URL + '/grades/pie/' + id + '.json');
 
         };
+
+        this.getSimilarNodesById = function (id) {
+
+            return $http.get(Constants.BASE_URL + '/nodes/similarNodes/' + id + '.json');
+
+        };
+
+
     }])
 
     .service("NodesPieChartService", function ($rootScope) {
