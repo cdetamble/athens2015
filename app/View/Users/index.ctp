@@ -74,7 +74,7 @@
 
             <div class="col-sm-3 text-center">
                                         <div class="form-group">
-                                            <label for="similar">Similar Nodes:</label>
+                                            <label for="similar">Similar Modules:</label>
                                             <select class="form-control" id="similar" ng-model="grades.similarNode" ng-options="current.Node.NODE_TITLE for current in grades.similarNodes" ng-change="grades.updateSimilarNodesPieChart()">
                                             </select>
                                         </div>
