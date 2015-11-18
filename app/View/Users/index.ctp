@@ -24,17 +24,22 @@
 
 </head>
 <body ng-app="Athens">
-<h1 class="text-center">Welcome</h1>
-
+<h1 class="text-center">University Analytics</h1>
+<p class="text-center">In order to start the analysis, please define if you are a lecturer or a student.</p>
+<br>
 <div class="container" ng-view ng-controller="AppCtrl as app">
-    <div class="jumbotron" ng-class="app.collapse(0)">
+    <div class="" ng-class="app.collapse(0)">
         <div class="row">
             <div class="col-sm-6 text-center">
-                <h2><a href ng-click="app.setUser('lecturer')">Lecturer</a></h2>
+                <div class="jumbotron custom-button" ng-click="app.setUser('lecturer')" ng-class="app.currentUser=='lecturer' ? 'selectable' : '' ">
+                    <h2>Lecturer</h2>
+                </div>
             </div>
 
             <div class="col-sm-6 text-center">
-                <h2><a href ng-click="app.setUser('student')">Student</a></h2>
+                <div class="jumbotron custom-button" ng-click="app.setUser('student')" ng-class="app.currentUser=='student' ? 'selectable' : '' ">
+                    <h2>Student</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -86,7 +91,7 @@
                 <h2>Students' Attendance Distribution</h2><br><br>
                 <nvd3 options="moduleGraph.options" data="moduleGraph.data" api="api" config="{refreshDataOnly: true}"></nvd3>
 
-               A total of <b>{{moduleGraph.explanation[0]}}</b> students were supposed to do <i>{{moduleGraph.explanation[1]}}</i> in the <b>{{moduleGraph.explanation[2]}}</b> semester.
+               A total of <b>{{moduleGraph.explanation[0]}}</b> students were supposed to do "<i>{{moduleGraph.explanation[1]}}</i>" in the <b>{{moduleGraph.explanation[2]}}</b> semester.
                <br>
                <br>
                <div id="summary"></div>

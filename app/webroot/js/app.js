@@ -178,7 +178,7 @@ angular.module('Athens', ['nvd3'])
                     } else if (item['key'] > 0) {
                         item['key'] = item['key'] + " semester" + (item['key'] > 1 ? "s" : "") + " late";
                     }
-                    s += item['y'] + " of them did it " + item['key'] + "<br>";
+                    s += item['y'] + " did it " + item['key'] + "<br>";
                 }
 
                 that.explanation[0] = sumStudents;

@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  */
 class NodesController extends Controller {
     public $components = array('RequestHandler');
-    public $uses = array('ActiveStudents', 'Node');
+    public $uses = array('ActiveStudents', 'FormerStudents', 'Node');
 
     /**
      * GET /nodes/.json?curriculum_number=<number>
@@ -73,14 +73,69 @@ class NodesController extends Controller {
         if (!empty($participantNumbers)) {
             $nodes = $this->ActiveStudents->find('list', array(
                 'fields' => array('NODE_ID'),
-                'conditions' => array('ST_PERSON_NR IN' => $participantNumbers)
+                'conditions' => array('ST_PERSON_NR' => $participantNumbers)
             ));
         }
         foreach ($nodes as $node) $nodeIds[] = $node;
 
         if (!empty($nodeIds)) {
             $nodes = $this->Node->find('all', array(
-                'conditions' => array('NODE_ID IN' => $nodeIds)
+                'conditions' => array('NODE_ID' => $nodeIds)
+            ));
+        }
+
+        $this->set('similarNodes', $nodes);
+        $this->set('_serialize', array("similarNodes"));
+    }
+
+    /**
+     * GET /nodes/similarNodesByList/.json&1=423&2=232&...
+     * Corresponds to the second task of the assignment
+     */
+    function similarNodesByList() {
+        $participants = array();
+        if (!empty($_GET)) {
+            $activeStudents = $this->ActiveStudents->find('all', array(
+                'fields' => "DISTINCT (ST_PERSON_NR)",
+                'conditions' => array('NODE_ID' => $_GET)
+            ));
+            $formerStudents = $this->FormerStudents->find('all', array(
+                'fields' => "DISTINCT (ST_PERSON_NR)",
+                'conditions' => array('NODE_ID' => $_GET)
+            ));
+            $participants = array_merge($activeStudents, $formerStudents);
+        }
+
+        foreach ($participants as $participant) {
+            if (isset($participant['ActiveStudents']))
+                $participantNumbers[] = $participant['ActiveStudents']['ST_PERSON_NR'];
+            else if (isset($participant['FormerStudents']))
+                $participantNumbers[] = $participant['FormerStudents']['ST_PERSON_NR'];
+        }
+
+        $nodes = array();
+        if (!empty($participantNumbers)) {
+            $nodes = $this->ActiveStudents->find('all', array(
+                'fields' => array('NODE_ID'),
+                'conditions' => array('ST_PERSON_NR' => $participantNumbers)
+            ));
+            $nodes2 = $this->FormerStudents->find('all', array(
+                'fields' => array('NODE_ID'),
+                'conditions' => array('ST_PERSON_NR' => $participantNumbers)
+            ));
+            $nodes = array_merge($nodes, $nodes2);
+        }
+
+        foreach ($nodes as $node) {
+            if (isset($node['ActiveStudents']))
+                $nodeIds[] = $node['ActiveStudents']['NODE_ID'];
+            else if (isset($node['FormerStudents']))
+                $nodeIds[] = $node['FormerStudents']['NODE_ID'];
+        }
+
+        if (!empty($nodeIds)) {
+            $nodes = $this->Node->find('all', array(
+                'conditions' => array('NODE_ID' => $nodeIds)
             ));
         }
 

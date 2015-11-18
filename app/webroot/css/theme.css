@@ -2,3 +2,12 @@
 .jumbotron.collapsed {
     padding: 0;
 }
+.custom-button {
+    cursor: pointer;
+}
+.selectable {
+    background-color: #ddd;
+}
+.custom-button:hover {
+    background-color: #ddd;
+}
