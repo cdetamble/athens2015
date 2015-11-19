@@ -29,9 +29,22 @@ angular.module('Athens', ['nvd3'])
 
         };
 
-        this.getSimilarNodesById = function (id) {
+        this.getSimilarNodesByList = function (list) {
+            var str = "";
+            for (i in list)
+            {
+                if (str == "")
+                {
+                    str = i+'='+ list[i].Node.NODE_ID;
+                }
+                else {
+                    str += '&'+i+'='+ list[i].Node.NODE_ID;
+                }
 
-            return $http.get(Constants.BASE_URL + '/nodes/similarNodes/' + id + '.json');
+            }
+
+
+            return $http.get(Constants.BASE_URL + '/nodes/similarNodesByList/.json?'+str);
 
         };
 
@@ -235,6 +248,7 @@ angular.module('Athens', ['nvd3'])
         this.selectedCurriculum = {};
         this.addedModules = [];
         this.addedModulesStr = "";
+        this.similarNodes = [];
         var that = this;
 
         this.updateCurriculums = function () {
@@ -257,7 +271,7 @@ angular.module('Athens', ['nvd3'])
 
             var contained = false;
             for (var m in this.addedModules)
-            { 
+            {
                 if (this.addedModules[m] === this.nodes[index])
                 {
                     contained = true;
@@ -279,6 +293,13 @@ angular.module('Athens', ['nvd3'])
             this.addedModulesStr = "";
             this.addedModules = [];
         };
+
+        this.sendModules = function () {
+            APIService.getSimilarNodesByList(this.addedModules).success(function (data) {
+                that.similarNodes = data.similarNodes;
+                console.log(that.similarNodes);
+            });
+        }
 
 
     }]);

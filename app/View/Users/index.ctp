@@ -135,7 +135,7 @@
             </div>
 
             <div class="col-sm-6">
-                <p class="label">Send</p> <button type="button" class="btn" id="btn-sender"><span class="glyphicon glyphicon-send"></span></button>
+                <p class="label">Send</p> <button type="button" class="btn" id="btn-sender" ng-click="moduleList.sendModules()"><span class="glyphicon glyphicon-send"></span></button>
                 <p class="label">Reset</p> <button type="button" class="btn" id="btn-sender" ng-click="moduleList.resetModules()"><span class="glyphicon glyphicon-remove"></span></button>
                 <div id="added-modules"> {{moduleList.addedModulesStr}} </div>
             </div>
