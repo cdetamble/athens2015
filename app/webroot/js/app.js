@@ -60,9 +60,19 @@ angular.module('Athens', ['nvd3'])
             else return '';
         };
 
+        this.resetUI = function() {
+            this.setLevel(0);
+            this.currentUser="";
+            this.currentGraph = '';
+            this.moduleList = false;
+        };
+
         this.setUser = function (user) {
             this.currentUser = user;
-            this.setLevel(1)
+            if (this.currentLevel > 0) {
+                this.resetUI();
+            }
+            else this.setLevel(1);
         };
 
         this.setGraph = function (graph) {
@@ -70,9 +80,9 @@ angular.module('Athens', ['nvd3'])
             this.setLevel(2);
         };
 
-        this.setModuleList = function() {
+        this.setModuleList = function () {
             this.moduleList = true;
-        }
+        };
 
         this.showGraph = function () {
             if (this.currentUser == 'lecturer' && this.currentGraph == 'moduleGraph') {

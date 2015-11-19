@@ -24,8 +24,9 @@
 
 </head>
 <body ng-app="Athens">
+<br>
+<br>
 <h1 class="text-center">University Analytics</h1>
-<p class="text-center">In order to start the analysis, please define if you are a lecturer or a student.</p>
 <br>
 <div class="container" ng-view ng-controller="AppCtrl as app">
     <div class="" ng-class="app.collapse(0)">
