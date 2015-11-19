@@ -32,10 +32,11 @@
 
 .module-row {
     list-style: none;
-    border: solid black 1px;
+    border: solid #ddd 1px;
     background: white;
     padding: 0.5em;
     cursor: pointer;
+    margin-bottom: 0.5em;
 }
 
 .module-row:hover {

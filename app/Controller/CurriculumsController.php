@@ -55,5 +55,20 @@ class CurriculumsController extends Controller {
         $this->set('_serialize', array("curriculums"));
     }
 
+    /**
+         * GET /curriculums/curriculumById/
+         */
+        function curriculumById($id) {
+
+
+            $this->layout = null;
+
+            $curriculums = $this->Curriculum->find('all', array(
+                        'conditions' => array('CURRICULUM_NR' => $id)
+                    ));
+            $this->set('curriculums', $curriculums);
+            $this->set('_serialize', array("curriculums"));
+        }
+
 }
 

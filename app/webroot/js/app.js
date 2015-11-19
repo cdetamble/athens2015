@@ -12,6 +12,12 @@ angular.module('Athens', ['nvd3'])
             return $http.get(Constants.BASE_URL + '/curriculums/.json?type=' + type);
         };
 
+        this.getCurriculumById = function (id) {
+
+            return $http.get(Constants.BASE_URL + '/curriculums/curriculumById/' + id + '.json');
+
+        };
+
         this.getNodesByNumber = function (number) {
 
             return $http.get(Constants.BASE_URL + '/nodes/.json?curriculum_number=' + number);
@@ -99,7 +105,7 @@ angular.module('Athens', ['nvd3'])
             {
                 return 'selectable' + ' '+ this.collapse(0);
             } else if (this.currentUser == 'student') {
-                return 'student' + ' '+ this.collapse(0);
+                return 'selectable' + ' '+ this.collapse(0);
             }
             else return this.collapse(0);
         }
@@ -249,6 +255,8 @@ angular.module('Athens', ['nvd3'])
         this.addedModules = [];
         this.addedModulesStr = "";
         this.similarNodes = [];
+        this.sent = false;
+        this.similarCurriculums = [];
         var that = this;
 
         this.updateCurriculums = function () {
@@ -260,6 +268,7 @@ angular.module('Athens', ['nvd3'])
         };
 
         this.updateNodes = function () {
+            this.sent = false;
             APIService.getNodesByNumber(this.selectedCurriculum.Curriculum.CURRICULUM_NR).success(function (data) {
                 that.nodes = data.nodes;
             });
@@ -292,14 +301,74 @@ angular.module('Athens', ['nvd3'])
         this.resetModules = function () {
             this.addedModulesStr = "";
             this.addedModules = [];
+            this.sent = false;
+        };
+
+        this.getMostSimilarCurriculums = function () {
+            var allSimilar = {};
+            for (m in this.similarNodes){
+
+                if (typeof allSimilar[this.similarNodes[m].Node.CURRICULUM_NR] == 'undefined')
+                {
+                    allSimilar[this.similarNodes[m].Node.CURRICULUM_NR] = 1;
+                }
+                else {
+                    allSimilar[this.similarNodes[m].Node.CURRICULUM_NR]++;
+                }
+
+            }
+
+            for (c in allSimilar){
+
+                APIService.getCurriculumById(c).success(function (data) {
+                    var curriculumName = data.curriculums[0].Curriculum.CURRICULUM_NAME;
+
+                    if (typeof that.similarCurriculums[curriculumName] == 'undefined')
+                    {
+                        that.similarCurriculums.push(
+                        {
+                            "label": curriculumName,
+                            "value": allSimilar[c]
+                        });
+                    }
+                });
+            }
         };
 
         this.sendModules = function () {
+            this.sent = true;
             APIService.getSimilarNodesByList(this.addedModules).success(function (data) {
                 that.similarNodes = data.similarNodes;
-                console.log(that.similarNodes);
+                that.getMostSimilarCurriculums()
             });
         }
+
+        this.options = {
+            chart: {
+                type: 'discreteBarChart',
+                height: 450,
+                margin : {
+                    top: 20,
+                    right: 20,
+                    bottom: 50,
+                    left: 55
+                },
+                x: function(d){return d.label;},
+                y: function(d){return d.value;},
+                showValues: true,
+                valueFormat: function(d){
+                    return d3.format(',.4f')(d);
+                },
+                duration: 500,
+                xAxis: {
+                    axisLabel: 'X Axis'
+                },
+                yAxis: {
+                    axisLabel: 'Y Axis',
+                    axisLabelDistance: -10
+                }
+            }
+        };
 
 
     }]);

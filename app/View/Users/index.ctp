@@ -130,8 +130,8 @@
 
    <div class="jumbotron" ng-if="app.moduleList" ng-class="app.collapse(2)">
         <div class="row">
-            <div class="col-sm-6">
-                <input type="text" placeholder="Add Modules" ng-model="query">
+            <div class="col-sm-6 text-center">
+                <input type="text" placeholder="Search Modules" ng-model="query">
             </div>
 
             <div class="col-sm-6">
@@ -144,9 +144,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <br>
-                <ul>
+                <ul ng-hide="moduleList.sent">
                     <li class="module-row" ng-repeat="node in moduleList.nodes | filter: query" ng-click="moduleList.addModule($index)">{{node.Node.NODE_TITLE}}</li>
                 <ul>
+                <br>
+                <div ng-show="moduleList.sent">
+                <nvd3 options="moduleList.options" data="moduleList.similarCurriculums"></nvd3>
+                </div>
             </div>
         </div>
 
