@@ -75,6 +75,16 @@ angular.module('Athens', ['nvd3'])
             else this.setLevel(1);
         };
 
+        this.getUserClass = function () {
+            if (this.currentUser == 'lecturer')
+            {
+                return 'selectable' + ' '+ this.collapse(0);
+            } else if (this.currentUser == 'student') {
+                return 'student' + ' '+ this.collapse(0);
+            }
+            else return this.collapse(0);
+        }
+
         this.setGraph = function (graph) {
             this.currentGraph = graph;
             this.setLevel(2);
@@ -82,6 +92,7 @@ angular.module('Athens', ['nvd3'])
 
         this.setModuleList = function () {
             this.moduleList = true;
+            this.setLevel(2);
         };
 
         this.showGraph = function () {
@@ -205,15 +216,19 @@ angular.module('Athens', ['nvd3'])
 
     }])
 
-    .controller('ModuleListCtrl', ['APIService', function (APIService) {
-        this.curriculumTypes = [{name: 'Bachelor of Science', value: 'bachelor'}, {
-            name: 'Master of Science',
-            value: 'master'
-        }];
+    .controller('ModuleListCtrl', ['APIService', '$rootScope', function (APIService, $rootScope) {
+
+        this.curriculumTypes = [
+            {name: 'Bachelor of Science', value: 'bachelor'},
+            {name: 'Master of Science',  value: 'master'}
+        ];
+
         this.curriculums = [];
         this.nodes = [];
         this.selectedType = {};
         this.selectedCurriculum = {};
+        this.addedModules = [];
+        this.addedModulesStr = "";
         var that = this;
 
         this.updateCurriculums = function () {
@@ -230,6 +245,22 @@ angular.module('Athens', ['nvd3'])
             });
 
 
+        };
+
+        this.addModule = function(index) {
+            if (this.addedModulesStr == ""){
+                this.addedModulesStr = this.nodes[index].Node.NODE_TITLE;
+            }
+            else {
+                this.addedModulesStr += ", " + this.nodes[index].Node.NODE_TITLE;
+            }
+
+            this.addedModules.push(this.nodes[index]);
+        };
+
+        this.resetModules = function () {
+            this.addedModulesStr = "";
+            this.addedModules = [];
         };
 
 

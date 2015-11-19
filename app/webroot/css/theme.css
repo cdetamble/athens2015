@@ -12,7 +12,32 @@
     background-color: #ddd;
 }
 
-.added-modules {
-    width: 90%;
-    background: lightgoldenrodyellow;
+#added-modules {
+
+    background-color: lightgoldenrodyellow;
+    border: solid 1px #ddd;
+    height: 4em;
+    max-height: 8em;
+    display: block;
+    overflow: scroll;
+}
+
+.label {
+    color: black;
+}
+
+#btn-sender {
+    background: white;
+}
+
+.module-row {
+    list-style: none;
+    border: solid black 1px;
+    background: white;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.module-row:hover {
+    background: #ddd;
 }

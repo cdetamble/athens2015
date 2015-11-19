@@ -29,16 +29,16 @@
 <h1 class="text-center">University Analytics</h1>
 <br>
 <div class="container" ng-view ng-controller="AppCtrl as app">
-    <div class="" ng-class="app.collapse(0)">
+    <div>
         <div class="row">
             <div class="col-sm-6 text-center">
-                <div class="jumbotron custom-button" ng-click="app.setUser('lecturer')" ng-class="app.currentUser=='lecturer' ? 'selectable' : '' ">
+                <div class="jumbotron custom-button" ng-click="app.setUser('lecturer')" ng-class="app.getUserClass()">
                     <h2>Lecturer</h2>
                 </div>
             </div>
 
             <div class="col-sm-6 text-center">
-                <div class="jumbotron custom-button" ng-click="app.setUser('student')" ng-class="app.currentUser=='student' ? 'selectable' : '' ">
+                <div class="jumbotron custom-button" ng-click="app.setUser('student')" ng-class="app.getUserClass()">
                     <h2>Student</h2>
                 </div>
             </div>
@@ -106,8 +106,8 @@
 
 
     <!-- STUDENT -->
-
-    <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'student' ? true : false" ng-controller="ModuleListCtrl as moduleList">
+    <div ng-controller="ModuleListCtrl as moduleList">
+    <div class="jumbotron" ng-class="app.collapse(1)" ng-show="app.currentUser == 'student' ? true : false">
         <div class="row">
 
             <div class="col-sm-6 text-center">
@@ -128,16 +128,29 @@
         </div>
     </div>
 
-   <div class="jumbotron" ng-show="app.moduleList" ng-controller="ModuleListCtrl as moduleList">
+   <div class="jumbotron" ng-if="app.moduleList" ng-class="app.collapse(2)">
         <div class="row">
-            <div class="col-sm-6 text-center">
-                    <button type="button" class="btn"><span class="glyphicon glyphicon-plus-sign"></span></button>
-                    <input type="text" placeholder="Add Modules" ng-model="query">
+            <div class="col-sm-6">
+                <input type="text" placeholder="Add Modules" ng-model="query">
             </div>
-            <div class="col-sm-6 text-center">
-             <input type="text" class="added-modules" ng-model="moduleList.addedModules" readonly>
-             </div>
+
+            <div class="col-sm-6">
+                <p class="label">Send</p> <button type="button" class="btn" id="btn-sender"><span class="glyphicon glyphicon-send"></span></button>
+                <p class="label">Reset</p> <button type="button" class="btn" id="btn-sender" ng-click="moduleList.resetModules()"><span class="glyphicon glyphicon-remove"></span></button>
+                <div id="added-modules"> {{moduleList.addedModulesStr}} </div>
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <ul>
+                    <li class="module-row" ng-repeat="node in moduleList.nodes | filter: query" ng-click="moduleList.addModule($index)">{{node.Node.NODE_TITLE}}</li>
+                <ul>
+            </div>
+        </div>
+
+   </div>
    </div>
 
 </body>
