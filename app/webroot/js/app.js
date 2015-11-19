@@ -29,6 +29,12 @@ angular.module('Athens', ['nvd3'])
 
         };
 
+        this.getSimilarNodesById = function (id) {
+
+            return $http.get(Constants.BASE_URL + '/nodes/similarNodes/' + id + '.json');
+
+        };
+
 
     }])
 
@@ -248,14 +254,25 @@ angular.module('Athens', ['nvd3'])
         };
 
         this.addModule = function(index) {
-            if (this.addedModulesStr == ""){
-                this.addedModulesStr = this.nodes[index].Node.NODE_TITLE;
-            }
-            else {
-                this.addedModulesStr += ", " + this.nodes[index].Node.NODE_TITLE;
-            }
 
-            this.addedModules.push(this.nodes[index]);
+            var contained = false;
+            for (var m in this.addedModules)
+            { 
+                if (this.addedModules[m] === this.nodes[index])
+                {
+                    contained = true;
+                }
+            }
+            if (!contained) {
+                if (this.addedModulesStr == "") {
+                    this.addedModulesStr = this.nodes[index].Node.NODE_TITLE;
+                }
+                else {
+                    this.addedModulesStr += ", " + this.nodes[index].Node.NODE_TITLE;
+                }
+
+                this.addedModules.push(this.nodes[index]);
+            }
         };
 
         this.resetModules = function () {
