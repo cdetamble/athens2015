@@ -129,9 +129,15 @@
     </div>
 
    <div class="jumbotron" ng-show="app.moduleList" ng-controller="ModuleListCtrl as moduleList">
-    <ul>
-        <li ng-repeat="node in moduleList.nodes.Node">{{$index}}</li>
-    </ul>
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                    <button type="button" class="btn"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                    <input type="text" placeholder="Add Modules" ng-model="query">
+            </div>
+            <div class="col-sm-6 text-center">
+             <input type="text" class="added-modules" ng-model="moduleList.addedModules" readonly>
+             </div>
+        </div>
    </div>
 
 </body>

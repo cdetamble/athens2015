@@ -96,7 +96,7 @@ angular.module('Athens', ['nvd3'])
 
     })
 
-    .controller('ModuleGradesCtrl', ['APIService', 'NodesPieChartService', function (APIService, NodesPieChartService) {
+    .controller('ModuleGradesCtrl', ['APIService', 'NodesPieChartService', '$scope', function (APIService, NodesPieChartService, $scope) {
         this.curriculumTypes = [{name: 'Bachelor of Science', value: 'bachelor'}, {
             name: 'Master of Science',
             value: 'master'
@@ -124,8 +124,6 @@ angular.module('Athens', ['nvd3'])
             APIService.getNodesByNumber(this.selectedCurriculum.Curriculum.CURRICULUM_NR).success(function (data) {
                 that.nodes = data.nodes;
             });
-
-
         };
 
         this.updateSimilar = function () {
@@ -140,10 +138,10 @@ angular.module('Athens', ['nvd3'])
 
         this.updateSimilarNodesPieChart = function () {
             this.selectedNode = this.similarNode;
+            this.similarNode = {};
             this.updateSimilar();
-            this.updateNodesPieChart()
+            this.updateNodesPieChart();
         };
-
 
     }])
 

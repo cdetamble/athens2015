@@ -11,3 +11,8 @@
 .custom-button:hover {
     background-color: #ddd;
 }
+
+.added-modules {
+    width: 90%;
+    background: lightgoldenrodyellow;
+}
