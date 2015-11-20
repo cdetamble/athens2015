@@ -37,20 +37,18 @@ angular.module('Athens', ['nvd3'])
 
         this.getSimilarNodesByList = function (list) {
             var str = "";
-            for (i in list)
-            {
-                if (str == "")
-                {
-                    str = i+'='+ list[i].Node.NODE_ID;
+            for (i in list) {
+                if (str == "") {
+                    str = i + '=' + list[i].Node.NODE_ID;
                 }
                 else {
-                    str += '&'+i+'='+ list[i].Node.NODE_ID;
+                    str += '&' + i + '=' + list[i].Node.NODE_ID;
                 }
 
             }
 
 
-            return $http.get(Constants.BASE_URL + '/nodes/similarNodesByList/.json?'+str);
+            return $http.get(Constants.BASE_URL + '/nodes/similarNodesByList/.json?' + str);
 
         };
 
@@ -85,9 +83,9 @@ angular.module('Athens', ['nvd3'])
             else return '';
         };
 
-        this.resetUI = function() {
+        this.resetUI = function () {
             this.setLevel(0);
-            this.currentUser="";
+            this.currentUser = "";
             this.currentGraph = '';
             this.moduleList = false;
         };
@@ -101,11 +99,10 @@ angular.module('Athens', ['nvd3'])
         };
 
         this.getUserClass = function () {
-            if (this.currentUser == 'lecturer')
-            {
-                return 'selectable' + ' '+ this.collapse(0);
+            if (this.currentUser == 'lecturer') {
+                return 'selectable' + ' ' + this.collapse(0);
             } else if (this.currentUser == 'student') {
-                return 'selectable' + ' '+ this.collapse(0);
+                return 'selectable' + ' ' + this.collapse(0);
             }
             else return this.collapse(0);
         }
@@ -241,11 +238,11 @@ angular.module('Athens', ['nvd3'])
 
     }])
 
-    .controller('ModuleListCtrl', ['APIService', '$rootScope', function (APIService, $rootScope) {
+    .controller('ModuleListCtrl', ['APIService', '$scope', function (APIService, $scope) {
 
         this.curriculumTypes = [
             {name: 'Bachelor of Science', value: 'bachelor'},
-            {name: 'Master of Science',  value: 'master'}
+            {name: 'Master of Science', value: 'master'}
         ];
 
         this.curriculums = [];
@@ -255,9 +252,43 @@ angular.module('Athens', ['nvd3'])
         this.addedModules = [];
         this.addedModulesStr = "";
         this.similarNodes = [];
-        this.sent = false;
-        this.similarCurriculums = [];
-        var that = this;
+        this.values = [];
+        this.options = {
+            chart: {
+                type: 'discreteBarChart',
+                height: 450,
+                margin: {
+                    top: 20,
+                    right: 20,
+                    bottom: 50,
+                    left: 55
+                },
+                x: function (d) {
+                    return d.label;
+                },
+                y: function (d) {
+                    return d.value;
+                },
+                showValues: true,
+                valueFormat: function (d) {
+                    return d3.format(',.4f')(d);
+                },
+                duration: 500,
+                xAxis: {
+                    axisLabel: 'X Axis'
+                },
+                yAxis: {
+                    axisLabel: 'Y Axis',
+                    axisLabelDistance: -10
+                }
+            }
+        };
+        this.similarCurriculums = [
+            {
+                key: "Most Similar Curriculums",
+                values: []
+                }];
+                var that = this;
 
         this.updateCurriculums = function () {
             APIService.getCurriculumsByType(this.selectedType.value).success(function (data) {
@@ -276,13 +307,11 @@ angular.module('Athens', ['nvd3'])
 
         };
 
-        this.addModule = function(index) {
+        this.addModule = function (index) {
 
             var contained = false;
-            for (var m in this.addedModules)
-            {
-                if (this.addedModules[m] === this.nodes[index])
-                {
+            for (var m in this.addedModules) {
+                if (this.addedModules[m] === this.nodes[index]) {
                     contained = true;
                 }
             }
@@ -301,36 +330,33 @@ angular.module('Athens', ['nvd3'])
         this.resetModules = function () {
             this.addedModulesStr = "";
             this.addedModules = [];
-            this.sent = false;
         };
 
         this.getMostSimilarCurriculums = function () {
             var allSimilar = {};
-            for (m in this.similarNodes){
+            for (m in this.similarNodes) {
 
-                if (typeof allSimilar[this.similarNodes[m].Node.CURRICULUM_NR] == 'undefined')
-                {
+                if (typeof allSimilar[this.similarNodes[m].Node.CURRICULUM_NR] == 'undefined') {
                     allSimilar[this.similarNodes[m].Node.CURRICULUM_NR] = 1;
                 }
                 else {
                     allSimilar[this.similarNodes[m].Node.CURRICULUM_NR]++;
                 }
-
             }
 
-            for (c in allSimilar){
+            for (c in allSimilar) {
 
                 APIService.getCurriculumById(c).success(function (data) {
-                    var curriculumName = data.curriculums[0].Curriculum.CURRICULUM_NAME;
+                    var curriculumName = data.curriculums[1].Curriculum.CURRICULUM_NAME;
 
-                    if (typeof that.similarCurriculums[curriculumName] == 'undefined')
-                    {
-                        that.similarCurriculums.push(
-                        {
-                            "label": curriculumName,
-                            "value": allSimilar[c]
-                        });
+                    if (typeof that.values[curriculumName] == 'undefined') {
+                        console.log(allSimilar[c]);
+                        that.similarCurriculums[0].values.push({"label": curriculumName,
+                                "value": allSimilar[c]
+                            });
                     }
+
+                    $scope.api.updateWithData(that.similarCurriculums);
                 });
             }
         };
@@ -343,32 +369,7 @@ angular.module('Athens', ['nvd3'])
             });
         }
 
-        this.options = {
-            chart: {
-                type: 'discreteBarChart',
-                height: 450,
-                margin : {
-                    top: 20,
-                    right: 20,
-                    bottom: 50,
-                    left: 55
-                },
-                x: function(d){return d.label;},
-                y: function(d){return d.value;},
-                showValues: true,
-                valueFormat: function(d){
-                    return d3.format(',.4f')(d);
-                },
-                duration: 500,
-                xAxis: {
-                    axisLabel: 'X Axis'
-                },
-                yAxis: {
-                    axisLabel: 'Y Axis',
-                    axisLabelDistance: -10
-                }
-            }
-        };
+
 
 
     }]);
