@@ -347,7 +347,7 @@ angular.module('Athens', ['nvd3'])
             for (c in allSimilar) {
 
                 APIService.getCurriculumById(c).success(function (data) {
-                    var curriculumName = data.curriculums[1].Curriculum.CURRICULUM_NAME;
+                    var curriculumName = data.curriculums[0].Curriculum.CURRICULUM_NAME;
 
                     if (typeof that.values[curriculumName] == 'undefined') {
                         console.log(allSimilar[c]);
@@ -355,6 +355,7 @@ angular.module('Athens', ['nvd3'])
                                 "value": allSimilar[c]
                             });
                     }
+                    
 
                     $scope.api.updateWithData(that.similarCurriculums);
                 });
